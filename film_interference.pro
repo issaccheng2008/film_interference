@@ -10,10 +10,14 @@ CONFIG += c++17
 
 SOURCES += \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    graphwidget.cpp \
+    ringwidget.cpp
 
 HEADERS += \
-    mainwindow.h
+    mainwindow.h \
+    graphwidget.h \
+    ringwidget.h
 
 FORMS += \
     mainwindow.ui
