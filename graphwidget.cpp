@@ -1,6 +1,7 @@
 #include "graphwidget.h"
 
 #include <QPainter>
+#include <QPainterPath>
 #include <QtMath>
 
 namespace

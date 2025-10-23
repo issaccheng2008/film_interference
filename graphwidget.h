@@ -1,8 +1,9 @@
 #ifndef GRAPHWIDGET_H
 #define GRAPHWIDGET_H
 
-#include <QWidget>
+#include <QPointF>
 #include <QVector>
+#include <QWidget>
 
 class GraphWidget : public QWidget
 {
