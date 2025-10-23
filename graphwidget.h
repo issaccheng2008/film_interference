@@ -11,7 +11,7 @@ class GraphWidget : public QWidget
 public:
     explicit GraphWidget(QWidget *parent = nullptr);
 
-    void setParameters(double e, double n1, double n2, double n3, double lambda);
+    void setParameters(double e, double n1, double n2, double n3, double lambda, double f);
 
 protected:
     void paintEvent(QPaintEvent *event) override;
@@ -24,6 +24,7 @@ private:
     double m_n2 = 0.0;
     double m_n3 = 0.0;
     double m_lambda = 0.0;
+    double m_f = 0.0;
 
     QVector<QPointF> m_samples;
 };

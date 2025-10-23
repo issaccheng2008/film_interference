@@ -67,7 +67,8 @@ void MainWindow::setupUiElements()
         {QStringLiteral("n1"), QStringLiteral("n1")},
         {QStringLiteral("n2"), QStringLiteral("n2")},
         {QStringLiteral("n3"), QStringLiteral("n3")},
-        {QStringLiteral("lambda"), QString::fromUtf8("λ")}
+        {QStringLiteral("lambda"), QString::fromUtf8("λ")},
+        {QStringLiteral("f"), QStringLiteral("f")}
     };
 
     int row = 0;
@@ -120,11 +121,12 @@ void MainWindow::updateVisuals()
     const double n2Value = m_values.value(QStringLiteral("n2"), 0.0);
     const double n3Value = m_values.value(QStringLiteral("n3"), 0.0);
     const double lambdaValue = m_values.value(QStringLiteral("lambda"), 0.0);
+    const double fValue = m_values.value(QStringLiteral("f"), 0.0);
 
     if (m_ringWidget) {
-        m_ringWidget->setParameters(eValue, n1Value, n2Value, n3Value, lambdaValue);
+        m_ringWidget->setParameters(eValue, n1Value, n2Value, n3Value, lambdaValue, fValue);
     }
     if (m_graphWidget) {
-        m_graphWidget->setParameters(eValue, n1Value, n2Value, n3Value, lambdaValue);
+        m_graphWidget->setParameters(eValue, n1Value, n2Value, n3Value, lambdaValue, fValue);
     }
 }

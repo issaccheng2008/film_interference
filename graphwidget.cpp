@@ -16,10 +16,10 @@ GraphWidget::GraphWidget(QWidget *parent)
     regenerateData();
 }
 
-void GraphWidget::setParameters(double e, double n1, double n2, double n3, double lambda)
+void GraphWidget::setParameters(double e, double n1, double n2, double n3, double lambda, double f)
 {
     if (qFuzzyCompare(m_e, e) && qFuzzyCompare(m_n1, n1) && qFuzzyCompare(m_n2, n2) &&
-        qFuzzyCompare(m_n3, n3) && qFuzzyCompare(m_lambda, lambda)) {
+        qFuzzyCompare(m_n3, n3) && qFuzzyCompare(m_lambda, lambda) && qFuzzyCompare(m_f, f)) {
         return;
     }
 
@@ -28,6 +28,7 @@ void GraphWidget::setParameters(double e, double n1, double n2, double n3, doubl
     m_n2 = n2;
     m_n3 = n3;
     m_lambda = lambda;
+    m_f = f;
     regenerateData();
     update();
 }
@@ -36,7 +37,7 @@ void GraphWidget::regenerateData()
 {
     m_samples.clear();
     for (double r = 0.0; r <= 1.0 + 1e-9; r += kDr) {
-        const double phase = m_e + m_n1 + m_n2 + m_n3 + m_lambda + r;
+        const double phase = m_e + m_n1 + m_n2 + m_n3 + m_lambda + m_f + r;
         const double brightness = qCos(phase);
         m_samples.append(QPointF(r, brightness * brightness));
     }
